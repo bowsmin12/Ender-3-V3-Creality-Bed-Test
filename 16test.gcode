@@ -197,11 +197,19 @@ G28 ;Home
 
 G92 E0 ;Reset Extruder
 G1 Z2.0 F3000 ;Move Z Axis up
-G1 X10.1 Y20 Z0.28 F5000.0 ;Move to start position
+; G1 X10.1 Y20 Z0.28 F5000.0 ;Move to start position
+G1 X220.1 Y20 Z0.28 F5000.0 ;Move to start position
 M109 S205.000000
-G1 X10.1 Y145.0 Z0.28 F1500.0 E15 ;Draw the first line
-G1 X10.4 Y145.0 Z0.28 F5000.0 ;Move to side a little
-G1 X10.4 Y20 Z0.28 F1500.0 E30 ;Draw the second line
+; G1 X10.1 Y145.0 Z0.28 F1500.0 E15 ;Draw the first line
+; G1 X10.4 Y145.0 Z0.28 F5000.0 ;Move to side a little
+; G1 X10.4 Y20 Z0.28 F1500.0 E30 ;Draw the second line
+; 
+; Moving the purge line to a differnt area, so that it doesn't interfere with the test print pattern
+; If you want to change these values, you also need to move the start position above
+G1 X220.1 Y145.0 Z0.28 F1500.0 E15 ;Draw the first line
+G1 X220.4 Y145.0 Z0.28 F5000.0 ;Move to side a little
+G1 X220.4 Y20 Z0.28 F1500.0 E30 ;Draw the second line
+
 G92 E0  ;Reset Extruder
 G1 E-1.0000 F1800 ;Retract a bit
 G1 Z2.0 F3000 ;Move Z Axis up
